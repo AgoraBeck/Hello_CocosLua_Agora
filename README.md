@@ -146,7 +146,7 @@
 ### 步骤 3: 演示游戏Demo
 演示Demo至少需要两部或多部 iOS 真机，本文仅以两部手机为例进行演示。
 
-1. 在两部手机上输入相同频道名称。
+1. 在两部手机上输入相同频道、不同用户id.
 
   ![](https://github.com/AgoraBeck/Cocos2dxResources/blob/master/Hello_CocosLua_Agora/demo_show.png.jpeg)
   
@@ -182,11 +182,11 @@
 1. 在项目根目录下创建一个文件夹，例如: AgoraGamingSDK。
 2. 将 include 和 libs 文件夹拷贝到 AgoraGamingSDK 里。
 3. 添加 .framework 文件:
-		a. 选中当前 Target 。
-		b. 选择 Build Phases > Link Binary With Libraries 。
-		c. 点击 +，然后 Add Other...:
-		d. 选择 AgoraAudioKit.framework 。
-		e. 添加以下必须的系统库:
+	- a. 选中当前 Target 。
+	- b. 选择 Build Phases > Link Binary With Libraries 。
+	- c. 点击 +，然后 Add Other...:
+	- d. 选择 AgoraAudioKit.framework 。
+	- e. 添加以下必须的系统库:
 	
 	![](https://github.com/AgoraBeck/Cocos2dxResources/blob/master/Hello_CocosLua_Agora/iOS_framework.png)
  
@@ -210,7 +210,7 @@ Cocos2d 项目默认使用 Objective-C 语言，所以只需要引用头文件�
 1. 创建桥接文件，取名为: MyAgora-Bridging-Header.h 。
 2. 在桥接文件里引用 AMG SDK。
 	
-	#include "../AgoraGamingSDK/include/agora_cocos2dx.h"
+	#include "../../../AgoraGamingSDK/include/agora_cocos2dx.h"
 	
 3. 将桥接文件设置为 Objective-C Bridging Header:
 4. 选择当前 Target 。
