@@ -1,0 +1,6 @@
+framework module AgoraCocos2dx {
+  umbrella header "AgoraCocos2dx.h"
+
+  export *
+  module * { export * }
+}
