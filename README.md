@@ -2,7 +2,7 @@
 
 # 使用Demo前，请阅读：
 
-此Demo时cocos2d-x Lua的视频 Demo。 
+此Demo是cocos2d-x Lua的视频 Demo。 
 
 1. 需要自己下载cocos2d-x-3.14.1，并将其内容放入Demo中的cocos2d下。修改cocos2dx源码的一个头文件： 打开cocos2d/cocos/renderer/CCTrianglesCommand.h文件，将TrianglesCommand类中的函数void useMaterial() const;改为virtual void useMaterial() const;
     
@@ -29,10 +29,7 @@
 > 注解:   Hello_CocosLua_Agora 即为本文需要使用的代码示例。可直接从 Github 下载。
 
 2. 请确保已满足以下环境要求:
-• Cocos2d 3.14.1 版本
-• 搭建Android eclipse 开发环境
-• 两部或多部支持音频功能的 Android 真机(4.0 或更高版本)
-• 一个 App ID， 详见 [获取App ID](https://docs.agora.io/cn/game_1.1/user_guide/Component_and_Others/Dynamic_Key_User_Guide.html#get-app-id)。
+
 
 ### 步骤 2: 编译代码示例
 	
@@ -43,7 +40,7 @@
 ### 步骤 3: 演示Demo
 演示Demo至少需要两部或多部 Android 真机，本文仅以两部手机为例进行演示。
 
-1. 在两部手机上输入相同频道名称。
+1. 在两部手机上输入相同频道、不同用户id。
   
   ![](https://github.com/AgoraBeck/Cocos2dxResources/blob/master/Hello_CocosLua_Agora/demo_show.png.jpeg)
 
@@ -79,16 +76,13 @@
 
 2. 将 SDK的include 和 libs 文件夹拷贝到 AgoraGamingSDK 里。
 
-3. 导入gora *.jar 文件。如图：
+3. 导入agora *.jar 文件。如图：
 ![](https://github.com/AgoraBeck/Cocos2dxResources/blob/master/Hello_CocosLua_Agora/eclipse-jar.jpeg)。
 
--如果没有导入libcocos2dx，需要导入。
+- 如果没有导入libcocos2dx，需要导入。
 
-4. 添加第三方库的引用:  如图中红色方框所示
+4. 添加第三方库、头文件的引用:  如图中红色方框所示
   ![](https://github.com/AgoraBeck/Cocos2dxResources/blob/master/Hello_CocosLua_Agora/eclipse-Android-mk.jpeg)
-
-5. 添加 .h 文件。添加以下内容到 LOCAL_C_INCLUDES 后面:
-		$(LOCAL_PATH)/../../../AgoraGamingSDK/include
 	
 ### 步骤 4: 添加权限
 	添加必要权限，例如:
@@ -112,7 +106,7 @@
 请根据 agora_cocos2dx.h 中API 实现所需功能。
 
 ### 步骤 7： cocos compile
-从终端进入工程目录 执行:
+	从终端进入工程目录 执行:
  
 - cocos compile -p android 
 
@@ -161,9 +155,7 @@
 你现在可以在频道内自由发言了！请观察该页面的文字提示消息来确定演示程序的运行状况。
 	
 
-
 ## 集成游戏 (Cocos2d) - iOS
-
 
 
 ### 步骤 1: 准备环境
@@ -212,7 +204,7 @@
 Objective-C
 Cocos2d 项目默认使用 Objective-C 语言，所以只需要引用头文件就可以:
 
-	#include "../AgoraGamingSDK/include/agora_cocos2dx.h"
+	#include "../../../AgoraGamingSDK/include/agora_cocos2dx.h"
 	
 #### Swift
 1. 创建桥接文件，取名为: MyAgora-Bridging-Header.h 。
