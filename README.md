@@ -2,6 +2,7 @@
 
 # 使用Demo前，请阅读：
 
+此Demo时cocos2d-x Lua的视频 Demo。 
 
 1. 需要自己下载cocos2d-x-3.14.1，并将其内容放入Demo中的cocos2d下。修改cocos2dx源码的一个头文件： 打开cocos2d/cocos/renderer/CCTrianglesCommand.h文件，将TrianglesCommand类中的函数void useMaterial() const;改为virtual void useMaterial() const;
     
@@ -10,11 +11,12 @@
 3. 填入真实 APP Id.
 
 4. 编译. 
+
 ----
 # Android
 
 ## 游戏视频快速入门 (Cocos2d) - Android 
-#### 使用 Agora 的 Hello-Cocos2dVideo-Agora 代码示例可以实现以下功能:
+#### 使用 Agora 的 Hello_CocosLua_Agora 代码示例可以实现以下功能:
 - 创建/加入频道
 - 视频发言
 - 离开频道
@@ -24,7 +26,7 @@
 
   ![](https://github.com/AgoraBeck/Cocos2dxResources/blob/master/sdk_list.png)
 
-> 注解:   Hello-Cocos2dVideo-Agora 即为本文需要使用的代码示例。可直接从 Github 下载。
+> 注解:   Hello_CocosLua_Agora 即为本文需要使用的代码示例。可直接从 Github 下载。
 
 2. 请确保已满足以下环境要求:
 • Cocos2d 3.14.1 版本
@@ -38,12 +40,12 @@
 2. 修改 app/src/org/cocos2d/cpp/AppActivity.java 当中的 appId。
 3. 连接好真机，点击 Run 按钮编译代码示例。
 	
-### 步骤 3: 演示游戏语音
-演示游戏语音至少需要两部或多部 Android 真机，本文仅以两部手机为例进行演示。
+### 步骤 3: 演示Demo
+演示Demo至少需要两部或多部 Android 真机，本文仅以两部手机为例进行演示。
 
 1. 在两部手机上输入相同频道名称。
   
-  ![](https://github.com/AgoraBeck/Cocos2dxResources/blob/master/demo_show.png)
+  ![](https://github.com/AgoraBeck/Cocos2dxResources/blob/master/Hello_CocosLua_Agora/demo_show.png.jpeg)
 
 2. 点击 Join Channel 即可加入同一频道。
 	
@@ -77,25 +79,18 @@
 
 2. 将 SDK的include 和 libs 文件夹拷贝到 AgoraGamingSDK 里。
 
-3. 添加 .jar 文件。将以下语句添加到 proj.android/app/build.gradle 当中 dependencies 处:
-  compile fileTree(include: ['*.jar'], dir: '../../AgoraGamingSDK/libs/android')
+3. 导入gora *.jar 文件。如图：
+![](https://github.com/AgoraBeck/Cocos2dxResources/blob/master/Hello_CocosLua_Agora/eclipse-jar.jpeg)。
 
-4. 添加 .jar 文件。将以下语句添加到 proj.android/app/build.gradle 当中 dependencies 处:
+-如果没有导入libcocos2dx，需要导入。
 
-- a. 在 proj.android/app/build.gradle 当中 sourceSets.main 处添加以下语句: 
-
-  jniLibs.srcDirs = ["libs", "../../AgoraGamingSDK/libs/Android"]
-
-- 或者通过 Eclipse 图形化界面 Project Structure 也可以完成: 
-  ![](https://github.com/AgoraBeck/Cocos2dxResources/blob/master/Android_gradle.png)
-
-- b. 添加 一个 agora-rtc 的 LOCAL_MODULE，然后引用:  如图中红色方框所示
-  ![](https://github.com/AgoraBeck/Cocos2dxResources/blob/master/Android_mk.png)
+4. 添加第三方库的引用:  如图中红色方框所示
+  ![](https://github.com/AgoraBeck/Cocos2dxResources/blob/master/Hello_CocosLua_Agora/eclipse-Android-mk.jpeg)
 
 5. 添加 .h 文件。添加以下内容到 LOCAL_C_INCLUDES 后面:
 		$(LOCAL_PATH)/../../../AgoraGamingSDK/include
 	
-	### 步骤 4: 添加权限
+### 步骤 4: 添加权限
 	添加必要权限，例如:
    - android.permission.INTERNET
    - android.permission.CHANGE_NETWORK_STATE
@@ -116,20 +111,17 @@
 ### 步骤 6: 调用 API
 请根据 agora_cocos2dx.h 中API 实现所需功能。
 
-### 步骤 7： ndk-build 
-点击Android-studio下面状态的“terminal”，进入终端。 执行:
+### 步骤 7： cocos compile
+从终端进入工程目录 执行:
  
- cd app/jni;ndk-build；编译c++文件。  
- 
-其中ndk-build版本为：android-ndk-r14b 
-
+- cocos compile -p android 
 
 ----
 
 # iOS
 
 ## 游戏视频快速入门 (Cocos2d) - iOS 
-使用 Agora 的 Hello-Cocos2dVideo-Agora 代码示例可以实现以下功能:
+使用 Agora 的 Hello_CocosLua_Agora 代码示例可以实现以下功能:
 
 - 创建/加入频道
 - 自由发言
@@ -141,7 +133,7 @@
 
  ![](https://github.com/AgoraBeck/Cocos2dxResources/blob/master/sdk_list.png)
 
-> 注解:   Hello-Cocos2dVideo-Agora 即为本文需要使用的代码示例。可直接从 Github 下载。
+> 注解:   Hello_CocosLua_Agora 即为本文需要使用的代码示例。可直接从 Github 下载。
 
 请确保已满足以下环境要求:
 - Cocos2d 3.14.1 或更高版本
@@ -155,14 +147,14 @@
 2. 修改 ios/AppController.mm 当中的 appId 。
 3. 连接好真机，点击 Run 进行编译。
 
-  如在编译过程中遇到任何问题，请参考[游戏语音常见问题](https://docs.agora.io/cn/game_1.1/user_guide/FAQ/game_cn.html) 。
+  如在编译过程中遇到任何问题，请参考[游戏常见问题](https://docs.agora.io/cn/game_1.1/user_guide/FAQ/game_cn.html) 。
 
-### 步骤 3: 演示游戏语音
-演示游戏语音至少需要两部或多部 iOS 真机，本文仅以两部手机为例进行演示。
+### 步骤 3: 演示游戏Demo
+演示Demo至少需要两部或多部 iOS 真机，本文仅以两部手机为例进行演示。
 
 1. 在两部手机上输入相同频道名称。
 
-  ![](https://github.com/AgoraBeck/Cocos2dxResources/blob/master/demo_show.png)
+  ![](https://github.com/AgoraBeck/Cocos2dxResources/blob/master/Hello_CocosLua_Agora/demo_show.png.jpeg)
   
 2. 点击 Join Channel 即可加入同一频道。
 	
@@ -192,7 +184,7 @@
 
 ### 步骤 2: 新建项目
 
-新建一个 Cocos2d 项目。如有需要，请参考[这里](http://www.cocos2d-x.org/wiki/How_to_Start_A_New_Cocos2D-X_Game) 。 如果已经有了项目，请跳过该步骤。
+新建一个 Cocos2d Lua项目。如有需要，请参考[这里](http://www.cocos2d-x.org/wiki/How_to_Start_A_New_Cocos2D-X_Game) 。 如果已经有了项目，请跳过该步骤。
 
 ### 步骤 3: 添加 SDK
 1. 在项目根目录下创建一个文件夹，例如: AgoraGamingSDK。
@@ -204,7 +196,7 @@
 		d. 选择 AgoraAudioKit.framework 。
 		e. 添加以下必须的系统库:
 	
-	![](https://github.com/AgoraBeck/Cocos2dxResources/blob/master/iOS_framework.png)
+	![](https://github.com/AgoraBeck/Cocos2dxResources/blob/master/Hello_CocosLua_Agora/iOS_framework.png)
  
 
 ### 步骤 4: 关闭 bitcode
